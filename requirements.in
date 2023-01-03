@@ -1,0 +1,6 @@
+pandas
+scikit-learn
+feature-engine
+scikit-optimize
+fastapi
+uvicorn[standard]

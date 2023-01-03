@@ -1,0 +1,72 @@
+[
+  {
+    "name": "hidden_layer_sizes",
+    "short_desc": "The ith element represents the number of neurons in the ith hidden layer.",
+    "default": 100,
+    "type": "int",
+    "search_type": "uniform",
+    "range_low": 4,
+    "range_high": 300,
+    "run_HPO": true
+  },
+  {
+    "name": "activation",
+    "short_desc": "Activation function for the hidden layer.",
+    "default": "relu",
+    "type": "categorical",
+    "categorical_vals": [
+      "relu",
+      "tanh",
+      "logistic",
+      "identity"
+    ],
+    "run_HPO": true
+  },
+  {
+    "name": "solver",
+    "short_desc": "The solver for weight optimization.",
+    "default": "adam",
+    "type": "categorical",
+    "categorical_vals": ["adam", "sgd", "lbfgs"],
+    "run_HPO": true
+  },
+  {
+    "name": "alpha",
+    "short_desc": "Strength of the L2 regularization term. The L2 regularization term is divided by the sample size when added to the loss.",
+    "default": 0.0001,
+    "type": "real",
+    "search_type": "uniform",
+    "range_low": 1e-5,
+    "range_high": 0.1,
+    "run_HPO": true
+  },
+  {
+    "name": "learning_rate",
+    "short_desc": "Learning rate schedule for weight updates.",
+    "default": "adaptive",
+    "type": "categorical",
+    "categorical_vals": ["constant", "invscaling", "adaptive"],
+    "run_HPO": true
+  },
+  {
+    "name": "power_t",
+    "short_desc": "The exponent for inverse scaling learning rate.",
+    "default": 0.5,
+    "type": "real",
+    "search_type": "uniform",
+    "range_low": 0.1,
+    "range_high": 0.9,
+    "run_HPO": true
+  },
+  {
+    "name": "max_iter",
+    "short_desc": "Maximum number of iterations. The solver iterates until convergence (determined by 'tol') or this number of iterations.",
+    "default": 200,
+    "type": "int",
+    "search_type": "uniform",
+    "range_low": 100,
+    "range_high": 500,
+    "run_HPO": true
+  }
+]
+
