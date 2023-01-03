@@ -38,12 +38,6 @@ model_server = ModelServer(model_path=model_path, data_schema=data_schema)
 app = FastAPI()
 
 
-async def gen_temp_file(ext: str = ".csv"):
-    """Generate a temporary file with a given extension"""
-    with NamedTemporaryFile(suffix=ext, delete=True) as temp_file:
-        yield temp_file.name
-
-
 @app.get("/ping", tags=["ping", "healthcheck"])
 async def ping() -> dict:
     """Determine if the container is working and healthy."""
